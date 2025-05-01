@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Pagamento Pix</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body { font-family: sans-serif; background: #fff; text-align: center; padding: 30px; }
+    .qr-code { margin: 20px auto; }
+    .copy-box {
+      border: 1px solid #ccc;
+      padding: 15px;
+      border-radius: 6px;
+      background: #f9f9f9;
+      display: inline-block;
+    }
+    .timer { font-size: 24px; color: red; margin: 15px 0; }
+  </style>
+</head>
+<body>
+  <h2>Pix gerado com sucesso!</h2>
+  <p>Aponte a câmera para o QR Code ou copie e cole a chave abaixo:</p>
+  <div class="qr-code">
+    <img src="qrcode.png" alt="QR Code Pix" width="200">
+  </div>
+  <div class="copy-box">
+    <strong>Chave Pix (copia e cola):</strong><br>
+    tatiane.pix@next.com.br
+  </div>
+  <div class="timer" id="tempo">30:00</div>
+
+  <script>
+    let tempo = 30 * 60;
+    setInterval(() => {
+      if (tempo > 0) {
+        tempo--;
+        const min = String(Math.floor(tempo / 60)).padStart(2, '0');
+        const sec = String(tempo % 60).padStart(2, '0');
+        document.getElementById('tempo').innerText = `${min}:${sec}`;
+      }
+    }, 1000);
+  </script>
+</body>
+</html>
