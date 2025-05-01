@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Pagamento Pix</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body { font-family: sans-serif; background: #f9f9f9; padding: 30px; text-align: center; }
+    .box {
+      max-width: 600px;
+      margin: auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .qr { margin: 20px 0; }
+    .pix-code {
+      background: #f1f1f1;
+      padding: 10px;
+      border-radius: 8px;
+      word-break: break-word;
+      margin: 10px 0;
+    }
+    button.copy {
+      background: #27ae60;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .timer { font-size: 22px; color: red; margin-top: 10px; }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <h2>Finalize o pagamento via Pix</h2>
+    <p>Escaneie o QR Code ou copie o código Pix abaixo:</p>
+    <div class="qr">
+      <img src="qrcode.png" width="200" />
+    </div>
+    <div class="pix-code" id="pixcode">
+00020126330014BR.GOV.BCB.PIX011124975852888520400005303986540584.005802BR5920QUERO PERSONALIZADOS6009SAO PAULO62230519QUEROPERSONALIZADOS6304850D
+    </div>
+    <button class="copy" onclick="copiarPix()">📋 Copiar código Pix</button>
+    <div class="timer" id="tempo">30:00</div>
+  </div>
+  <script>
+    function copiarPix() {
+      const codigo = document.getElementById('pixcode').innerText;
+      navigator.clipboard.writeText(codigo);
+      alert("Código Pix copiado!");
+    }
+    let tempo = 30 * 60;
+    setInterval(() => {
+      if (tempo > 0) {
+        tempo--;
+        const min = String(Math.floor(tempo / 60)).padStart(2, '0');
+        const sec = String(tempo % 60).padStart(2, '0');
+        document.getElementById('tempo').innerText = `${min}:${sec}`;
+      }
+    }, 1000);
+  </script>
+</body>
+</html>

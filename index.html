@@ -1,0 +1,109 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <title>Miniaturas Artísticas</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body { margin: 0; font-family: sans-serif; background: #fff; color: #333; }
+    .container { max-width: 1100px; margin: auto; padding: 40px 20px; }
+    .flex { display: flex; gap: 40px; flex-wrap: wrap; }
+    .image-box { flex: 1; min-width: 300px; }
+    .image-box img { width: 100%; border-radius: 8px; }
+    .thumbs { display: flex; gap: 10px; margin-top: 10px; }
+    .thumbs img { width: 60px; height: 60px; object-fit: cover; border-radius: 4px; cursor: pointer; border: 2px solid transparent; }
+    .thumbs img:hover { border-color: #e67e22; }
+    .content { flex: 1; min-width: 300px; }
+    h1 { font-size: 28px; color: #333; margin-bottom: 10px; }
+    h1 span { color: #e67e22; }
+    p { font-size: 16px; line-height: 1.6; color: #444; }
+    .prices { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 15px; margin-top: 20px; }
+    .card {
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 15px;
+      text-align: center;
+      background: #f9f9f9;
+    }
+    .card h3 { margin: 10px 0 5px; font-size: 16px; }
+    .card .old { text-decoration: line-through; color: #888; font-size: 14px; }
+    .card .price { font-size: 20px; color: #e67e22; margin-bottom: 10px; }
+    .btn {
+      background: #27ae60;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 6px;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 10px;
+    }
+    .btn:hover { background: #219150; }
+    .info-box { margin-top: 40px; background: #fef8f0; padding: 20px; border-left: 4px solid #e67e22; border-radius: 10px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="flex">
+      <div class="image-box">
+        <img id="main-image" src="https://miniaturasartisticas.site/images/001.webp" alt="Miniatura grande" />
+        <div class="thumbs">
+          <img src="https://miniaturasartisticas.site/images/001.webp" onclick="trocarImagem(this.src)" />
+          <img src="https://miniaturasartisticas.site/images/002.webp" onclick="trocarImagem(this.src)" />
+          <img src="https://miniaturasartisticas.site/images/003.webp" onclick="trocarImagem(this.src)" />
+          <img src="https://miniaturasartisticas.site/images/004.webp" onclick="trocarImagem(this.src)" />
+          <img src="https://miniaturasartisticas.site/images/005.webp" onclick="trocarImagem(this.src)" />
+        </div>
+      </div>
+      <div class="content">
+        <h1>Miniatura Personalizada <span>Com sua Foto</span> - Eterna Lembrança</h1>
+        <p><strong>Eternize momentos especiais em alta definição</strong></p>
+        <p><strong>Eternize quem você ama em uma miniatura realista! ✨</strong></p>
+        <p>Algumas memórias são tão valiosas que merecem be preservadas para sempre. Agora, você pode transformar uma simples foto em uma <strong>miniatura 3D hiper-realista</strong>, capturando cada detalhe e expressão com perfeição.</p>
+        <p>Seja para homenagear um ente querido, presentear alguém especial ou simplesmente guardar uma lembrança única, nossa tecnologia permite criar esculturas personalizadas que duram para sempre.</p>
+        <div class="prices">
+          <div class="card">
+            <h3>1 Boneco</h3>
+            <div class="old">R$ 169,90</div>
+            <div class="price">R$ 84,90</div>
+            <a href="pix.html" class="btn">Comprar</a>
+          </div>
+          <div class="card">
+            <h3>2 Bonecos</h3>
+            <div class="old">R$ 219,90</div>
+            <div class="price">R$ 137,90</div>
+            <a href="pix.html" class="btn">Comprar</a>
+          </div>
+          <div class="card">
+            <h3>3 Bonecos</h3>
+            <div class="old">R$ 259,90</div>
+            <div class="price">R$ 177,90</div>
+            <a href="pix.html" class="btn">Comprar</a>
+          </div>
+          <div class="card">
+            <h3>4 Bonecos</h3>
+            <div class="old">R$ 297,00</div>
+            <div class="price">R$ 217,90</div>
+            <a href="pix.html" class="btn">Comprar</a>
+          </div>
+          <div class="card">
+            <h3>5 Bonecos</h3>
+            <div class="old">R$ 349,90</div>
+            <div class="price">R$ 247,90</div>
+            <a href="pix.html" class="btn">Comprar</a>
+          </div>
+        </div>
+        <div class="info-box">
+          <h3>10% de desconto no Pix!</h3>
+          <p>Valores já com desconto. Aproveite essa condição especial para sua miniatura 3D personalizada.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    function trocarImagem(src) {
+      document.getElementById("main-image").src = src;
+    }
+  </script>
+</body>
+</html>
